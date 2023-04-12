@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="area"></div>
+    <div id="volume"></div>
+
+    <form>
+        Altura: <input type="text" id="alt"> <br>
+        Largura: <input type="text" id="larg"> <br>
+
+        Resultado: <input type="text" id="result"> <br>
+        <input type="button" value="calcular" onclick="calcular()">
+    </form>
+    <script>
+        function getSize(largura, altura, profundidade) {
+            var area = largura * altura;
+            var volume = largura * altura * profundidade;
+            var sizes = [area, volume];
+
+            return sizes;
+        }
+
+        var area1 = getSize(3, 2, 3)[0];
+        document.getElementById("area").innerHTML = area1.toFixed(2);
+
+        var volume1 = getSize(3, 2, 3)[1];
+        document.getElementById("volume").innerHTML = volume1.toFixed(2);
+    </script>
+
+    <script>
+        function calcular(){
+            var resultado, largura, altura;
+            altura = document.getElementById("alt").value;
+            largura = document.getElementById("larg").value;
+
+            resultado = altura * largura;
+            document.getElementById("result").value = resultado.toFixed(2);
+
+        }
+    </script>
+</body>
+</html>
